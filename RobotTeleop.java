@@ -23,7 +23,10 @@ public class RobotTeleop extends OpMode {
         if (gamepad1.a){
             MoveServo();
         }
-        telemetry.update(); 
+        
+        moveArm((gamepad1.right_trigger)-(gamepad1.left_trigger));
+        
+        telemetry.update();
         
     }
     @Override
@@ -31,8 +34,14 @@ public class RobotTeleop extends OpMode {
         telemetry.addData("Status: ", "Running");
     }
     
+    private void moveArm(double speed){
+        
+        robot.arm.setPower(speed);
+    }
+    
     private void MoveServo(){
-        robot.servol.getController().setServoPosition(0,0.1);
+        
+        robot.servol.getController().setServoPosition(0,.1);
     }
     
     

@@ -13,6 +13,7 @@ public class RobotHardware {
     public DcMotor frontl = null;
     public DcMotor frontr = null;
     public DcMotor backr = null;
+    public DcMotor arm = null;
     
     public CRServo servol = null;
     
@@ -30,6 +31,7 @@ public class RobotHardware {
         frontl = hwMap.get(DcMotor.class, "frontl");
         frontr = hwMap.get(DcMotor.class, "frontr");
         backr = hwMap.get(DcMotor.class, "backr");
+        arm = hwMap.get(DcMotor.class, "arm");
         
         servol = hwMap.get(CRServo.class, "servol");
         
@@ -37,17 +39,20 @@ public class RobotHardware {
         frontl.setPower(0);
         frontr.setPower(0);
         backr.setPower(0);
+        arm.setPower(0);
         
         backl.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         frontl.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         frontr.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         backr.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        arm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         
         backl.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         frontl.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         frontr.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         backr.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-
+        arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        
         
         }
     
